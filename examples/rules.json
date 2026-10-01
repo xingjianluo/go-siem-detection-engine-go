@@ -1,0 +1,54 @@
+{
+  "rules": [
+    {
+      "version": 2,
+      "id": "failed-ssh",
+      "name": "Failed SSH logins burst",
+      "description": ">=3 failed SSH logins from one rule scope within 1 minute",
+      "severity": "high",
+      "match": {"field": "message", "op": "contains", "value": "Failed password"},
+      "window": "1m",
+      "threshold": 3,
+      "dedup_window": "5m"
+    },
+    {
+      "version": 2,
+      "id": "privilege-escalation",
+      "name": "Privilege escalation",
+      "severity": "critical",
+      "match": {"field": "message", "op": "regex", "value": "sudo: .* COMMAND="},
+      "window": "0s",
+      "threshold": 1,
+      "dedup_window": "5m"
+    },
+    {
+      "version": 2,
+      "id": "high-bytes-out",
+      "name": "Large outbound transfer",
+      "severity": "medium",
+      "match": {"field": "bytes_out", "op": "gte", "value": 1000000},
+      "window": "0s",
+      "threshold": 1
+    },
+    {
+      "version": 99,
+      "id": "too-new-rule",
+      "name": "Rule from the future",
+      "severity": "low",
+      "match": {"field": "message", "op": "contains", "value": "x"}
+    },
+    {
+      "version": 2,
+      "id": "bad-regex",
+      "name": "Broken regex",
+      "severity": "low",
+      "match": {"field": "message", "op": "regex", "value": "("}
+    },
+    {
+      "version": 2,
+      "name": "Missing id entry",
+      "severity": "low",
+      "match": {"field": "message", "op": "contains", "value": "y"}
+    }
+  ]
+}

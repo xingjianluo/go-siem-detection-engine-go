@@ -1,0 +1,11 @@
+{"id":"e1","source":"auth","ts":"2026-10-01T10:00:05Z","message":"Failed password for root","fields":{"src_ip":"10.0.0.1"}}
+{"id":"e2","source":"auth","ts":"2026-10-01T10:00:20Z","message":"Failed password for root","fields":{"src_ip":"10.0.0.1"}}
+{"id":"e3","source":"auth","ts":"2026-10-01T10:00:40Z","message":"Failed password for admin","fields":{"src_ip":"10.0.0.2"}}
+{"id":"e2","source":"auth","ts":"2026-10-01T10:00:20Z","message":"Failed password for root","fields":{"src_ip":"10.0.0.1"}}
+{"id":"e4","source":"auth","ts":"2026-10-01T10:00:55Z","message":"sudo: alice : TTY=pts/0 ; COMMAND=/usr/bin/whoami","fields":{}}
+{"id":"e5","source":"net","ts":"2026-10-01T10:01:30Z","message":"upload","fields":{"bytes_out": 2500000}}
+{"id":"e6","source":"auth","ts":"2026-10-01T09:59:50Z","message":"Failed password for late","fields":{}}
+{"id":"e7","source":"auth","ts":"2026-10-01T10:02:15Z","message":"Failed password in next window","fields":{}}
+{"id":"e8","source":"auth","ts":"2026-10-01T10:02:20Z","message":"Failed password in next window","fields":{}}
+{"id":"e9","source":"auth","ts":"2026-10-01T10:02:25Z","message":"Failed password in next window","fields":{}}
+{"id":"e10","source":"auth","ts":"2026-10-01T10:02:30Z","message":"sudo: bob : TTY=pts/1 ; COMMAND=/bin/cat /etc/shadow","fields":{}}
