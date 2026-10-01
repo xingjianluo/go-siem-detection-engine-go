@@ -1,0 +1,9 @@
+{"id":"e1","timestamp":"2026-10-01T10:00:00Z","source":"web-1","fields":{"action":"login_failed","user":"alice"}}
+{"id":"e2","timestamp":"2026-10-01T10:01:00Z","source":"web-1","fields":{"action":"login_failed","user":"alice"}}
+{"id":"e1","timestamp":"2026-10-01T10:00:00Z","source":"web-1","fields":{"action":"login_failed","user":"alice"}}
+{"id":"e3","timestamp":"2026-10-01T10:02:00Z","source":"web-1","fields":{"action":"login_failed","user":"bob"}}
+{"id":"e4","timestamp":"2026-10-01T10:03:00Z","source":"web-1","fields":{"action":"login_failed","user":"bob"}}
+{"id":"e5","timestamp":"2026-10-01T10:04:00Z","source":"web-2","fields":{"action":"login_failed","user":"carol"}}
+{"id":"e6","timestamp":"2026-10-01T10:05:00Z","source":"web-1","fields":{"action":"transfer","user":"alice","amount":"25000"}}
+{"id":"e7","timestamp":"2026-10-01T10:30:00Z","source":"web-1","fields":{"action":"login_failed","user":"dave"}}
+{"id":"e8","timestamp":"2026-10-01T10:06:00Z","source":"web-1","fields":{"action":"login_failed","user":"eve"}}

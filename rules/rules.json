@@ -1,0 +1,55 @@
+{
+  "rules": [
+    {
+      "id": "R-BRUTE-FORCE",
+      "version": 1,
+      "description": "same source reports 3+ login failures within 5m",
+      "severity": "high",
+      "window": "5m",
+      "threshold": 3,
+      "group_by": "source",
+      "conditions": [
+        {"field": "action", "op": "eq", "value": "login_failed"}
+      ]
+    },
+    {
+      "id": "R-LARGE-TRANSFER",
+      "version": 1,
+      "description": "single transfer over 10000",
+      "severity": "medium",
+      "window": "10m",
+      "threshold": 1,
+      "group_by": "user",
+      "conditions": [
+        {"field": "action", "op": "eq", "value": "transfer"},
+        {"field": "amount", "op": "gt", "value": "10000"}
+      ]
+    },
+    {
+      "id": "R-TOO-NEW",
+      "version": 99,
+      "description": "version from the future",
+      "severity": "low",
+      "window": "1m",
+      "threshold": 1,
+      "conditions": [{"field": "action", "op": "eq", "value": "x"}]
+    },
+    {
+      "id": "R-BAD-OP",
+      "version": 1,
+      "description": "unknown operator",
+      "severity": "low",
+      "window": "1m",
+      "threshold": 1,
+      "conditions": [{"field": "action", "op": "regex", "value": "x"}]
+    },
+    {
+      "id": "R-NO-WINDOW",
+      "version": 1,
+      "description": "missing window",
+      "severity": "low",
+      "threshold": 1,
+      "conditions": [{"field": "action", "op": "eq", "value": "x"}]
+    }
+  ]
+}
