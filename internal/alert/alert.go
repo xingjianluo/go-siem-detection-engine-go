@@ -44,6 +44,7 @@ type Manager struct {
 	mu     sync.Mutex
 	window time.Duration
 	alerts map[string]*Alert // 去重键 -> 告警
+	seq    int               // 本管理器内新建告警的单调序号（保证 ID 确定性）
 }
 
 // NewManager 创建告警管理器，window 为去重滑动窗口。
@@ -69,8 +70,9 @@ func (m *Manager) Record(match engine.Match, now time.Time) (Alert, bool) {
 		return *a, false
 	}
 
+	m.seq++
 	a := &Alert{
-		ID:        fmt.Sprintf("%s-%d", key, now.UnixNano()),
+		ID:        fmt.Sprintf("%s-%d-%d", key, now.UnixNano(), m.seq),
 		RuleID:    match.RuleID,
 		GroupKey:  match.GroupKey,
 		Hits:      1,
